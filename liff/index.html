@@ -80,7 +80,18 @@
 
     async function main() {
       alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "2000636474-XMB5pzKp" })
+      //await liff.init({ liffId: "2000636474-XMB5pzKp" })
+        
+      await liff.init({
+              liffId: "2000636474-XMB5pzKp", // Use own liffId
+            })
+            .then(() => {
+              // Start to use liff's api
+            })
+            .catch((err) => {
+              // Error happens during initialization
+              console.log(err.code, err.message);
+            });
       awail getEnvironment()
       // getUserProfile()
       // getContext()
